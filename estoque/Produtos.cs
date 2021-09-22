@@ -5,6 +5,7 @@ using System.Globalization;
 
 namespace estoque
 {
+    //Oi Eduardo
     class AUTO_PROPERTIES
     {
         //Declaração das variaveis do produto
