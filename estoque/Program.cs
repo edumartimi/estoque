@@ -19,7 +19,7 @@ namespace estoque
             int quantidade = int.Parse(Console.ReadLine());
 
             // chamando a classe produto
-            Produto p = new Produto(nome, preco, quantidade);
+            AUTO_PROPERTIES p = new AUTO_PROPERTIES(nome, preco, quantidade);
 
             
             Console.WriteLine("Dados do produto: " + p);

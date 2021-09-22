@@ -5,43 +5,71 @@ using System.Globalization;
 
 namespace estoque
 {
-    public class Produto
+    class AUTO_PROPERTIES
     {
-        // declarando variaveis
-        public string Nome;
-        public double Preco;
-        public int Quantidade;
+        //Declaração das variaveis do produto
+        private string _nome;
+        //Declaração de variavel,ler e tornar a variavel private para seguraça
+        public double _preco { get; private set; }
+        public int _quantidade { get; private set; }
 
-        //construindo as variaveis
-        public Produto(string nome, double preco, int quantidade)
+        //Declaração do construtor
+        public AUTO_PROPERTIES(string nome, double preco, int quantidade)
         {
-            Nome = nome;
-            Preco = preco;
-            Quantidade = quantidade;
+            _nome = nome;
+            _preco = preco;
+            _quantidade = quantidade;
         }
 
-        // construindo o valor do estoque
-        public double ValorEstoque()
-        { 
-            return Preco * Quantidade;
-        }
-
-        // construindo a adição de produtos
-        public void AdicionarProduto(int quantidade)
+        //contrutor padrao
+        public AUTO_PROPERTIES()
         {
-            Quantidade += quantidade;
+
         }
 
-        // construindo a remoção de produtos
-        public void RemoverProdutos(int quantidade)
+        public string Nome
         {
-            Quantidade = Quantidade - quantidade;
+            //lendo o conteudo da variante _nome
+            get { return _nome; }
+            //gravando o conteudo de value em _nome depois da validação
+            set
+            {
+                if (value != null && value.Length > 1)
+                {
+                    _nome = value;
+                }
+            }
         }
 
-        // construtor
+        //Função para calcular o valor total do estoque
+        public double ValorTotalEmEstoque()
+        {
+            return _preco * _quantidade;
+        }
+
+        //Função para adicionar Produtos ao estoque
+        public void AdicionarProduto(int qtd)
+        {
+            _quantidade += qtd;
+        }
+
+        //Função para remover produtos do estoque
+        public void RemoverProdutos(int qtd)
+        {
+            _quantidade = _quantidade - qtd;
+        }
+
+        //Criando um formato para o ToString
         public override string ToString()
         {
-            return Nome + ", R$ " + Preco.ToString("F2", CultureInfo.InvariantCulture) + ", " + Quantidade + " unidades, Total: R$ " + ValorEstoque().ToString("F2", CultureInfo.InvariantCulture);
+            return _nome
+            + ",R$"
+            + _preco.ToString("F2", CultureInfo.InvariantCulture)
+            + ","
+            + _quantidade
+            + " unidades,Total: R$"
+            + ValorTotalEmEstoque().ToString("F2", CultureInfo.InvariantCulture);
+
         }
     }
 }
