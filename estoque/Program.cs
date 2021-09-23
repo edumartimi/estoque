@@ -42,7 +42,7 @@ namespace estoque
             qte = int.Parse(Console.ReadLine());
             p.RemoverProdutos(qte);
 
-            // resultado
+            // resultado final
             Console.WriteLine("Dados do atualizados: " + p);
 
             Console.ReadKey();
