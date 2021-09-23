@@ -14,12 +14,12 @@ namespace estoque
             
             Console.Write("Preço: ");
             double preco = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            
+           
             Console.Write("Quantidade no estoque: ");
             int quantidade = int.Parse(Console.ReadLine());
 
             // chamando a classe produto
-            Produto p = new Produto(nome, preco, quantidade);
+            produto p = new produto(nome, preco, quantidade);
 
             
             Console.WriteLine("Dados do produto: " + p);
