@@ -3,6 +3,7 @@ using System.Globalization;
 
 namespace estoque
 {
+    //teste
     public class Program
     {
         static void Main(string[] args)
