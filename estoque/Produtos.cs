@@ -7,13 +7,13 @@ namespace estoque
 {
     public class produto
     {
-        //Declaração das variaveis do produto
+        //Criando as variaveis do produto
         private string _nome;
-        //Declaração de variavel,ler e tornar a variavel private para seguraça
+        //criando a variavel,ler e tornar a variavel private para seguraça
         public double _preco { get; private set; }
         public int _quantidade { get; private set; }
 
-        //Declaração do construtor
+        //criando o construtor
         public produto(string nome, double preco, int quantidade)
         {
             _nome = nome;
@@ -21,7 +21,7 @@ namespace estoque
             _quantidade = quantidade;
         }
 
-        //contrutor padrao
+        //Construindo um produto
         public produto()
         {
 
@@ -29,9 +29,9 @@ namespace estoque
 
         public string Nome
         {
-            //lendo o conteudo da variante _nome
+            //pegando o conteudo da variante _nome
             get { return _nome; }
-            //gravando o conteudo de value em _nome depois da validação
+            //setando o conteudo de value em _nome depois da validação
             set
             {
                 if (value != null && value.Length > 1)
@@ -41,25 +41,25 @@ namespace estoque
             }
         }
 
-        //Função para calcular o valor total do estoque
+        //criando uma função para calcular o valor total do estoque
         public double ValorTotalEmEstoque()
         {
             return _preco * _quantidade;
         }
 
-        //Função para adicionar Produtos ao estoque
+        //criando uma função para adicionar Produtos ao estoque
         public void AdicionarProduto(int qtd)
         {
             _quantidade += qtd;
         }
 
-        //Função para remover produtos do estoque
+        //criando uma função para remover produtos do estoque
         public void RemoverProdutos(int qtd)
         {
             _quantidade = _quantidade - qtd;
         }
 
-        //Criando um formato para o ToString
+        //fazendo ela ficar em um formato para o ToString
         public override string ToString()
         {
             return _nome
