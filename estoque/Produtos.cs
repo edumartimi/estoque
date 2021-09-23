@@ -7,12 +7,12 @@ namespace estoque
 {
     public class produto
     {
-        //Declaração das variaveis do produto
+        //Declarando as variaveis do produto
         private string _nome;
         private double _preco;
         private int _quantidade;
 
-        //Declaração do construtor
+        //Declarando as variaveis do construtor
         public produto(string nome, double preco, int quantidade)
         {
             _nome = nome;
@@ -20,49 +20,49 @@ namespace estoque
             _quantidade = quantidade;
         }
 
-        //contrutor padrao
+        //Construindo o produto
         public produto()
         {
 
         }
 
-        //Criação de uma função para ler a variavel _nome
+        //Criando uma função para pegar a variavel _nome
         public string GetNome()
         {
             return _nome;
         }
 
-        //Criação de uma função para gravar o coteudo de nome na variavel _nome
+        //Criando uma função para setar o coteudo de nome na variavel _nome
         public void SetNome(string nome)
         {
             _nome = nome;
         }
 
-        //Criação de uma função para ler a variavel _preco
+        //Criando uma função para pegar a variavel _preco
         public double GetPreco()
         {
             return _preco;
         }
 
-        //Criação de uma função para ler a variavel _quantidade
+        //Criando uma função para pegar a variavel _quantidade
         public int GetQuantidade()
         {
             return _quantidade;
         }
 
-        //Função para calcular o valor total do estoque
+        //criando uma função para calcular o valor do estoque
         public double ValorTotalEmEstoque()
         {
             return _preco * _quantidade;
         }
 
-        //Função para adicionar Produtos ao estoque
+        //criando uma função para adicionar Produtos ao estoque
         public void AdicionarProduto(int qtd)
         {
             _quantidade += qtd;
         }
 
-        //Função para remover produtos do estoque
+        //criando uma função para remover produtos do estoque
         public void RemoverProdutos(int qtd)
         {
             _quantidade = _quantidade - qtd;
