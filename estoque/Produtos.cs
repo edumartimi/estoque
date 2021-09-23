@@ -5,16 +5,15 @@ using System.Globalization;
 
 namespace estoque
 {
-    class Produto
+    public class produto
     {
         //Declaração das variaveis do produto
         private string _nome;
-        //Declaração de variavel,ler e tornar a variavel private para seguraça
-        public double _preco { get; private set; }
-        public int _quantidade { get; private set; }
+        private double _preco;
+        private int _quantidade;
 
         //Declaração do construtor
-        public Produto(string nome, double preco, int quantidade)
+        public produto(string nome, double preco, int quantidade)
         {
             _nome = nome;
             _preco = preco;
@@ -22,23 +21,33 @@ namespace estoque
         }
 
         //contrutor padrao
-        public Produto()
+        public produto()
         {
 
         }
 
-        public string Nome
+        //Criação de uma função para ler a variavel _nome
+        public string GetNome()
         {
-            //lendo o conteudo da variante _nome
-            get { return _nome; }
-            //gravando o conteudo de value em _nome depois da validação
-            set
-            {
-                if (value != null && value.Length > 1)
-                {
-                    _nome = value;
-                }
-            }
+            return _nome;
+        }
+
+        //Criação de uma função para gravar o coteudo de nome na variavel _nome
+        public void SetNome(string nome)
+        {
+            _nome = nome;
+        }
+
+        //Criação de uma função para ler a variavel _preco
+        public double GetPreco()
+        {
+            return _preco;
+        }
+
+        //Criação de uma função para ler a variavel _quantidade
+        public int GetQuantidade()
+        {
+            return _quantidade;
         }
 
         //Função para calcular o valor total do estoque
@@ -72,4 +81,5 @@ namespace estoque
 
         }
     }
+
 }
