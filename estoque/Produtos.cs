@@ -5,7 +5,7 @@ using System.Globalization;
 
 namespace estoque
 {
-    class AUTO_PROPERTIES
+    class Produto
     {
         //Declaração das variaveis do produto
         private string _nome;
@@ -14,7 +14,7 @@ namespace estoque
         public int _quantidade { get; private set; }
 
         //Declaração do construtor
-        public AUTO_PROPERTIES(string nome, double preco, int quantidade)
+        public Produto(string nome, double preco, int quantidade)
         {
             _nome = nome;
             _preco = preco;
@@ -22,7 +22,7 @@ namespace estoque
         }
 
         //contrutor padrao
-        public AUTO_PROPERTIES()
+        public Produto()
         {
 
         }
